@@ -1,4 +1,4 @@
-local RunService: RunService = game:GetService("RunService")
+local RunService = game:GetService("RunService")
 
 local ScriptBinding = {}
 ScriptBinding.__index = ScriptBinding
@@ -39,7 +39,9 @@ return function(
 	)
 
 	BindingId += 1
-	local bindingId = "BindToRenderStep_".. BindingId
+	local bindingId = (
+		"BindToRenderStep_".. BindingId
+	)
 
 	RunService:BindToRenderStep(
 		bindingId,
