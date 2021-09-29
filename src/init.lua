@@ -24,10 +24,11 @@ export type ScriptBinding = typeof(
 	setmetatable({}, ScriptBinding)
 )
 
+-- Binds a function to a certain priority in RenderStep
 return function(
 	priority: number,
 	callback: (deltaTime: number) -> ()
-)
+): ScriptBinding
 	assert(
 		typeof(priority) == 'number',
 		"Must be number"
